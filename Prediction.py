@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
 import os
+import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 
 st.markdown("""
     <style>
@@ -248,6 +252,19 @@ with col2:
 
 # Visualization Section
 
+
+## Count the occurrences of 'Fraudulent' and 'Genuine' in the 'Prediction Label' column
+prediction_counts = input_df['Prediction Label'].value_counts()
+
+# Prepare the data for the pie chart
+data = {'Category': prediction_counts.index, 'Count': prediction_counts.values}
+df = pd.DataFrame(data)
+
+# Plotting the Pie Chart
+fig = px.pie(df, names='Category', values='Count', title="Fraud vs Genuine Transactions")
+fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1A7FA2', '#F0C808']))
+st.plotly_chart(fig, use_container_width=True)
+
 # Bar chart for prediction counts
 st.write("### Fraudulent vs Genuine Transactions")
 prediction_counts = input_df['Prediction Label'].value_counts()
@@ -257,6 +274,8 @@ ax.set_title("Transaction Count")
 ax.set_ylabel("Count")
 ax.set_xlabel("Transaction Type")
 st.pyplot(fig)
+
+
 
 # Distribution of fraud probabilities
 st.write("### Fraud Probability Distribution")
