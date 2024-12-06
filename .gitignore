@@ -1,0 +1,63 @@
+# Python-related
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+*.env
+*.venv/
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+*.log
+*.coverage
+*.cover
+htmlcov/
+.cache/
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Thumbnails
+._*
+
+# Virtual environments
+env/
+venv/
+ENV/
+VENV/
+
+# Pip and Conda
+*.lock
+pip-log.txt
+pip-delete-this-directory.txt
+*.conda
+*.parquet
+
+# Tools and environments
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.joblib
+
+# Streamlit-specific
+.streamlit/
+
+# Others
+.idea/
+*.iml
+*.swp
+*.bak
+*.tmp
+*.orig
+*.save
