@@ -23,30 +23,6 @@ st.markdown("""
 st.title("Fraud Detection")
 
 
-# Check if the image exists
-# image_path = os.path.join("assets", "image.jpg")
-# if os.path.exists(image_path):
-#     st.image(image_path, use_column_width=True)
-# else:
-#     st.write("Image not found!")
-
-
-# Apply custom background image using CSS
-# background_image_css = f"""
-# <style>
-# body {{
-#     background-image: url("assets/image.jpg");
-#     background-size: 100%;
-#     height:100vh;
-#     background-position: center;
-#     background-repeat: no-repeat;
-#     background-attachment: fixed;
-# }}
-
-
-# </style>
-# """
-# st.markdown(background_image_css, unsafe_allow_html=True)
 
 
 
@@ -92,8 +68,14 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
-
-
+# Inject custom CSS to hide link icons for headers
+st.markdown("""
+    <style>
+    .st-emotion-cache-gi0tri {
+        display: none;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # Page title
 st.markdown("""
@@ -156,6 +138,9 @@ st.markdown("""
     .st-emotion-cache-1vzeuhh{
             background-color:white;
             }
+    .st-emotion-cache-1373cj4 {
+            color:white
+    }
             
     div.stSlider > div[data-baseweb = "slider"] > div > div{
             color:white;
@@ -323,9 +308,6 @@ if 'isFraud' in input_df.columns:
     fraudulent_transactions = input_df[input_df['isFraud'] == 1]
     genuine_transactions = input_df[input_df['isFraud'] == 0]
 
-    # Display the number of fraudulent and genuine transactions
-    # st.write(f"Number of fraudulent transactions identified: {len(fraudulent_transactions)}")
-    # st.write(f"Number of genuine transactions identified: {len(genuine_transactions)}")
 
     
     # Display both tables side by side
@@ -405,105 +387,3 @@ else:
 
 
 
-# # Log-transformation of the 'TransactionAmt'
-# input_df['Log_TransactionAmt'] = np.log1p(input_df['TransactionAmt'])
-
-# # Plotting the distribution of log-transformed Transaction Amount
-# plt.figure(figsize=(10, 6))
-# sns.histplot(input_df['Log_TransactionAmt'], bins=100, kde=True)
-
-# # Set plot title and labels
-# plt.title('Log-Transformed Transaction Amount Distribution')
-# plt.xlabel('Log(Transaction Amount)')
-# plt.ylabel('Frequency')
-
-# # Display the plot in Streamlit
-# st.pyplot(plt)
-
-# # Apply log transformation to 'TransactionAmt' for better visualization of its distribution
-# input_df['Log_TransactionAmt'] = np.log1p(input_df['TransactionAmt'])
-
-# # Create a boxplot for 'Log_TransactionAmt' vs. 'isFraud'
-# plt.figure(figsize=(10, 6))
-# sns.boxplot(x='isFraud', y='Log_TransactionAmt', data=input_df)
-
-# # Add title and labels
-# plt.title('Transaction Amount vs. Fraud')
-# plt.xlabel('Is Fraud')
-# plt.ylabel('Log(Transaction Amount)')
-
-# # Display the plot
-# st.pyplot(plt)
-
-
-
-
-
-
-# # Add labels and probabilities
-# input_df['Prediction'] = predictions
-# input_df['Prediction Label'] = input_df['Prediction'].apply(lambda x: 'Genuine Transaction' if x == 0 else 'Fraudulent Transaction')
-# input_df['Fraud Probability'] = prediction_probabilities[:, 1]
-
-# # Separate genuine and fraudulent transactions
-# genuine_transactions = input_df[input_df['Prediction'] == 0]
-# fraudulent_transactions = input_df[input_df['Prediction'] == 1]
-
-# # Create columns for horizontal display
-# col1, col2 = st.columns(2)
-
-# # Display Genuine Transactions in the first column
-# with col1:
-#     st.subheader('Genuine Transactions')
-#     st.write(genuine_transactions[['Prediction Label', 'Fraud Probability']])
-
-# # Display Fraudulent Transactions in the second column
-# with col2:
-#     st.subheader('Fraudulent Transactions')
-#     st.write(fraudulent_transactions[['Prediction Label', 'Fraud Probability']])
-
-# # Visualization Section
-
-
-# ## Count the occurrences of 'Fraudulent' and 'Genuine' in the 'Prediction Label' column
-# prediction_counts = input_df['Prediction Label'].value_counts()
-
-# # Prepare the data for the pie chart
-# data = {'Category': prediction_counts.index, 'Count': prediction_counts.values}
-# df = pd.DataFrame(data)
-
-# # Plotting the Pie Chart
-# fig = px.pie(df, names='Category', values='Count', title="Fraud vs Genuine Transactions")
-# fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1A7FA2', '#F0C808']))
-# st.plotly_chart(fig, use_container_width=True)
-
-# # Bar chart for prediction counts
-# st.write("### Fraudulent vs Genuine Transactions")
-# prediction_counts = input_df['Prediction Label'].value_counts()
-# fig, ax = plt.subplots()
-# sns.barplot(x=prediction_counts.index, y=prediction_counts.values, ax=ax, palette="coolwarm")
-# ax.set_title("Transaction Count")
-# ax.set_ylabel("Count")
-# ax.set_xlabel("Transaction Type")
-# st.pyplot(fig)
-
-
-
-# # Distribution of fraud probabilities
-# st.write("### Fraud Probability Distribution")
-# fig, ax = plt.subplots()
-# sns.histplot(input_df['Fraud Probability'], bins=20, kde=True, color="orange", ax=ax)
-# ax.set_title("Fraud Probability Distribution")
-# ax.set_xlabel("Fraud Probability")
-# ax.set_ylabel("Frequency")
-# st.pyplot(fig)
-
-# # Altair chart for Fraud Probability vs Amount
-# st.write("### Fraud Probability vs Transaction Amount")
-# chart = alt.Chart(input_df).mark_circle(size=60).encode(
-#     x='Amount',
-#     y='Fraud Probability',
-#     color='Prediction Label',
-#     tooltip=['Amount', 'Fraud Probability', 'Prediction Label']
-# ).interactive()
-# st.altair_chart(chart, use_container_width=True)
