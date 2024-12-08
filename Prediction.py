@@ -23,7 +23,7 @@ st.markdown("""
 st.title("Fraud Detection")
 
 
-# # Check if the image exists
+# Check if the image exists
 # image_path = os.path.join("assets", "image.jpg")
 # if os.path.exists(image_path):
 #     st.image(image_path, use_column_width=True)
@@ -51,16 +51,19 @@ st.title("Fraud Detection")
 
 
 # Apply custom theme and CSS styling
-# st.markdown("""
-#     <style>
-#     .main { background-color: #1A7FA2; }
-#     .block-container { padding: 3rem; }
-#     h1 { font-size: 2.5rem; color: #1A7FA2  ; }
-#     h2 { font-size: 1.75rem; color: #1A7FA2; }
-#     .stButton>button { background-color: #1A7FA2; color: white; }
-#     # .stSidebar { background-color: #1A7FA2; }
-#     </style>
-#     """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    .main {
+            background: url('/mnt/data/digital-padlock-with-virtual-screen-on-dark-background-cyber-security-technology-for-fraud-prevention-and-privacy-data-network-protection-concept-vector.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }   
+     .block-container { padding: 3rem; }
+    h1 { font-size: 2.5rem; color: #1A7FA2  ; }
+    h2 { font-size: 1.75rem; color: #1A7FA2; }
+    .stButton>button { background-color: #1A7FA2; color: white; }
+    # .stSidebar { background-color: #1A7FA2; }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.markdown("""
 
@@ -114,8 +117,20 @@ st.markdown("""
     .st-emotion-cache-1qtecxd {
             color: white;
     }
+            
+    .st-emotion-cache-16txtl3{
+        background-color: #1A7FA2;
+        border-right: 3px solid #146374; /* A slightly darker shade for the border */
+
+
+            }
     .st-emotion-cache-1inwz65{
              color: white;
+            }
+
+    .st-emotion-cache-12fmjuu{
+        background-color: #1A7FA2;
+
             }
 
     .st-emotion-cache-152dyl6 {
@@ -125,6 +140,7 @@ st.markdown("""
     .st-emotion-cache-ugcgyn{
         background-color: #1A7FA2;
         border-right: 3px solid #146374; /* A slightly darker shade for the border */
+        
 
     }
 
@@ -136,6 +152,37 @@ st.markdown("""
             background-color: #1A7FA2;
 
     }
+            
+    .st-emotion-cache-1vzeuhh{
+            background-color:white;
+            }
+            
+    div.stSlider > div[data-baseweb = "slider"] > div > div{
+            color:white;
+            }
+    .st-emotion-cache-10y5sf6{
+            color:white;
+            }
+    
+    .st-emotion-cache-l9bjmx p{
+            color:white;
+            }
+    .st-emotion-cache-1puwf6r p{
+            color:white;
+            }
+    .st-emotion-cache-1dj3ksd{
+            background-color:white;
+            }
+
+    st-ci {
+background-image: linear-gradient(to right, rgb(255, 75, 75) 0%, rgb(255, 75, 75) 59.8%, rgba(151, 166, 195, 0.25) 59.8%, rgba(151, 166, 195, 0.25) 100%);}
+
+    .st-emotion-cache-6qob1r{
+        background-color: #1A7FA2;
+            }
+    .st-emotion-cache-18ni7ap{
+        background-color: #1A7FA2;
+            }
 
     
 
@@ -159,42 +206,71 @@ uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=['cs
 
 # User input for single sample
 def user_input():
-    V1 = st.sidebar.slider('V1', -5.0, 1.5, 5.0)
-    V2 = st.sidebar.slider('V2', -5.0, 1.5, 5.0)
-    V3 = st.sidebar.slider('V3', -5.0, 1.5, 5.0)
-    V4 = st.sidebar.slider('V4', -5.0, 1.5, 5.0)
-    V5 = st.sidebar.slider('V5', -5.0, 1.5, 5.0)
-    V6 = st.sidebar.slider('V6', -5.0, 1.5, 5.0)
-    V7 = st.sidebar.slider('V7', -5.0, 1.5, 5.0)
-    V8 = st.sidebar.slider('V8', -5.0, 1.5, 5.0)
-    V9 = st.sidebar.slider('V9', -5.0, 1.5, 5.0)
-    V10 = st.sidebar.slider('V10', -5.0, 1.5, 5.0)
-    V11 = st.sidebar.slider('V11', -5.0, 1.5, 5.0)
-    V12 = st.sidebar.slider('V12', -5.0, 1.5, 5.0)
-    V13 = st.sidebar.slider('V13', -5.0, 1.5, 5.0)
-    V14 = st.sidebar.slider('V14', -5.0, 1.5, 5.0)
-    V15 = st.sidebar.slider('V15', -5.0, 1.5, 5.0)
-    V16 = st.sidebar.slider('V16', -5.0, 1.5, 5.0)
-    V17 = st.sidebar.slider('V17', -5.0, 1.5, 5.0)
-    V18 = st.sidebar.slider('V18', -5.0, 1.5, 5.0)
-    V19 = st.sidebar.slider('V19', -5.0, 1.5, 5.0)
-    V20 = st.sidebar.slider('V20', -5.0, 1.5, 5.0)
-    V21 = st.sidebar.slider('V21', -5.0, 1.5, 5.0)
-    V22 = st.sidebar.slider('V22', -5.0, 1.5, 5.0)
-    V23 = st.sidebar.slider('V23', -5.0, 1.5, 5.0)
-    V24 = st.sidebar.slider('V24', -5.0, 1.5, 5.0)
-    V25 = st.sidebar.slider('V25', -5.0, 1.5, 5.0)
-    V26 = st.sidebar.slider('V26', -5.0, 1.5, 5.0)
-    V27 = st.sidebar.slider('V27', -5.0, 1.5, 5.0)
-    V28 = st.sidebar.slider('V28', -5.0, 1.5, 5.0)
-    Amount = st.sidebar.number_input('Amount')
+    # Use sliders for numeric inputs
+    TransactionID = st.sidebar.slider('TransactionID', -3663549, 3663549, 5663549)
+    TransactionAmt = st.sidebar.slider('TransactionAmt', 0.0, 5000.0, 3500.0)
+    card1 = st.sidebar.slider('card1', -5.0, 5.0, 0.0)
+    C13 = st.sidebar.slider('C13', 0.0, 100.0, 115.0)
+    TransactionDT_Days = st.sidebar.slider('TransactionDT_Days', -100, 100, 7)
+    addr1 = st.sidebar.slider('addr1', 0, 100, 6)
+    C1 = st.sidebar.slider('C1', -5.0, 5.0, 4.0)
+    card2 = st.sidebar.slider('card2', 0, 100, 6)
+    C14 = st.sidebar.slider('C14', 0.0, 100.0, 21.0)
+    D15 = st.sidebar.slider('D15', 0.0, 100.0, 16.0)
+    card5 = st.sidebar.slider('card5', 0, 100, 4)
+    P_emaildomain = st.sidebar.slider('P_emaildomain', 0.0, 100.0, 419.0)
+    C6 = st.sidebar.slider('C6', -5.0, 5.0, 16.0)
+    D1 = st.sidebar.slider('D1', 0.0, 100.0, 4.0)
+    D2 = st.sidebar.slider('D2', 0.0, 100.0, 419.0)
+    C11 = st.sidebar.slider('C11', 0.0, 100.0, 5.0)
+    Transaction_month = st.sidebar.slider('Transaction_month', 1, 12, 7)
+    card3 = st.sidebar.slider('card3', 0, 100, 398)
+    D4 = st.sidebar.slider('D4', 0.0, 100.0, 6.0)
+    C2 = st.sidebar.slider('C2', 0.0, 100.0, 16.0)
+    dist1 = st.sidebar.slider('dist1', 0.0, 100.0, 2.0)
+    R_emaildomain = st.sidebar.slider('R_emaildomain', 0.0, 100.0, 418.0)
+    card6 = st.sidebar.slider('card6', 0.0, 100.0, 6.0)
+    D10 = st.sidebar.slider('D10', 0.0, 100.0, 0.0)
+    C9 = st.sidebar.slider('C9', 0.0, 100.0, 472.0)
+    M5 = st.sidebar.slider('M5', 0.0, 100.0, 37.79)
+    id_20 = st.sidebar.slider('id_20', 0.0, 1000.0, 2526.0)
+    D8 = st.sidebar.slider('D8', 0.0, 100.0, 47.0)
+    C5 = st.sidebar.slider('C5', 0.0, 100.0, 42.0)
+    C12 = st.sidebar.slider('C12', 0.0, 100.0, 1.0)
+    M6 = st.sidebar.slider('M6', 0.0, 100.0, 37.79)
+    D11 = st.sidebar.slider('D11', 0.0, 100.0, 3.0)
+    id_01 = st.sidebar.slider('id_01', 0.0, 1000.0, 1.0)
+    DeviceInfo = st.sidebar.slider('DeviceInfo', 0.0, 100.0, 0.0)
+    id_31 = st.sidebar.slider('id_31', 0.0, 100.0, 47.0)
+    id_30 = st.sidebar.slider('id_30', 0.0, 100.0, 42.0)
+    V87 = st.sidebar.slider('V87', 0.0, 100.0, 1.0)
+    V53 = st.sidebar.slider('V53', 0.0, 100.0, 0.0)
+    id_02 = st.sidebar.slider('id_02', 0.0, 1000.0, 125800.5)
+    V83 = st.sidebar.slider('V83', 0.0, 100.0, 0.0)
+    D3 = st.sidebar.slider('D3', 0.0, 100.0, 0.0)
+    ProductCD = st.sidebar.slider('ProductCD', 0.0, 100.0, 3.0)
+    V313 = st.sidebar.slider('V313', 0.0, 1000.0, 0.0)
+    V70 = st.sidebar.slider('V70', 0.0, 100.0, 47.95)
+    V310 = st.sidebar.slider('V310', 0.0, 1000.0, 0.0)
+    M4 = st.sidebar.slider('M4', 0.0, 100.0, 1.0)
+    EarlyMorningFlag = st.sidebar.slider('EarlyMorningFlag', 0.0, 100.0, 0.0)
+    id_05 = st.sidebar.slider('id_05', 0.0, 100.0, 0.0)
+    card4 = st.sidebar.slider('card4', 0.0, 100.0, 0.0)
+    V296 = st.sidebar.slider('V296', 0.0, 100.0, 0.0)
 
-    data = {'V1': V1, 'V2': V2, 'V3': V3, 'V4': V4, 'V5': V5, 'V6': V6,
-            'V7': V7, 'V8': V8, 'V9': V9, 'V10': V10, 'V11': V11, 'V12': V12,
-            'V13': V13, 'V14': V14, 'V15': V15, 'V16': V16, 'V17': V17, 'V18': V18,
-            'V19': V19, 'V20': V20, 'V21': V21, 'V22': V22, 'V23': V23, 'V24': V24,
-            'V25': V25, 'V26': V26, 'V27': V27, 'V28': V28, 'Amount': Amount}
-    
+    data = {
+        'TransactionID': TransactionID, 'TransactionAmt': TransactionAmt, 'card1': card1, 'C13': C13,
+        'TransactionDT_Days': TransactionDT_Days, 'addr1': addr1, 'C1': C1, 'card2': card2,
+        'C14': C14, 'D15': D15, 'card5': card5, 'P_emaildomain': P_emaildomain, 'C6': C6,
+        'D1': D1, 'D2': D2, 'C11': C11, 'Transaction_month': Transaction_month, 'card3': card3,
+        'D4': D4, 'C2': C2, 'dist1': dist1, 'R_emaildomain': R_emaildomain, 'card6': card6,
+        'D10': D10, 'C9': C9, 'M5': M5, 'id_20': id_20, 'D8': D8, 'C5': C5, 'C12': C12,
+        'M6': M6, 'D11': D11, 'id_01': id_01, 'DeviceInfo': DeviceInfo, 'id_31': id_31,
+        'id_30': id_30, 'V87': V87, 'V53': V53, 'id_02': id_02, 'V83': V83, 'D3': D3,
+        'ProductCD': ProductCD, 'V313': V313, 'V70': V70, 'V310': V310, 'M4': M4,
+        'EarlyMorningFlag': EarlyMorningFlag, 'id_05': id_05, 'card4': card4, 'V296': V296
+    }
+
     return pd.DataFrame(data, index=[0])
 
 # Load input data
@@ -213,85 +289,221 @@ else:
     st.write(input_df)
 
 # Load the trained model
-load_clf = joblib.load(open('savedModels/model.joblib', 'rb'))
+# Define the path to the model
+model_path = 'savedModels/lightgbm_model.pkl'
 
-# Make predictions
-predictions = load_clf.predict(input_df)
-prediction_probabilities = load_clf.predict_proba(input_df)
+# Check if the model file exists
+if os.path.exists(model_path):
+    try:
+        with open(model_path, 'rb') as model_file:
+            load_clf = joblib.load(model_file)
+            print("Model loaded successfully!")
+    except Exception as e:
+        st.error(f"Error loading the model: {e}")
+        load_clf = None
+else:
+    st.error(f"Model file not found. Please check the path to '{model_path}'.")
+    load_clf = None
 
-# # Add labels
+if load_clf is not None:
+    # Make predictions
+    predictions = load_clf.predict(input_df)
+
+    # Example threshold for binary classification
+    threshold = 0.3176
+    y_pred_binary = (predictions > threshold).astype(int)
+
+    # Add prediction to input data
+    input_df['isFraud'] = y_pred_binary
+
+
+# Check if 'isFraud' column is already in the dataset
+if 'isFraud' in input_df.columns:
+    # Separate fraudulent and genuine transactions
+    fraudulent_transactions = input_df[input_df['isFraud'] == 1]
+    genuine_transactions = input_df[input_df['isFraud'] == 0]
+
+    # Display the number of fraudulent and genuine transactions
+    # st.write(f"Number of fraudulent transactions identified: {len(fraudulent_transactions)}")
+    # st.write(f"Number of genuine transactions identified: {len(genuine_transactions)}")
+
+    
+    # Display both tables side by side
+    col1, col2 = st.columns(2)
+
+    # Display Genuine Transactions in the first column
+    with col1:
+        st.subheader('Genuine Transactions')
+        st.write(genuine_transactions[['TransactionID', 'isFraud']])
+
+    # Display Fraudulent Transactions in the second column
+    with col2:
+        st.subheader('Fraudulent Transactions')
+        st.write(fraudulent_transactions[['TransactionID', 'isFraud']])
+    st.write(f"Fraudulent Transactions: {sum(input_df['isFraud'] == 1)}")
+    st.write(f"Genuine Transactions: {sum(input_df['isFraud'] == 0)}")
+
+    st.subheader("Bar Chart")
+    fraud_counts = input_df['isFraud'].value_counts()
+
+    # Dynamically set index names based on the number of categories
+    fraud_counts.index = ['Genuine' if val == 0 else 'Fraudulent' for val in fraud_counts.index]
+
+    # Plot using Plotly
+    fig = px.bar(fraud_counts, x=fraud_counts.index, y=fraud_counts.values, 
+                labels={'x': 'Transaction Type', 'y': 'Count'}, 
+                title='Transaction Type Counts')
+    st.plotly_chart(fig)
+
+
+    # Box Plot
+    st.subheader("Box Plot")
+    selected_feature = st.selectbox('Select a feature for Box Plot:', input_df.select_dtypes(include=['float64', 'int64']).columns)
+    if selected_feature:
+        fig, ax = plt.subplots()
+        sns.boxplot(data=input_df, x=selected_feature, ax=ax)
+        ax.set_title(f'Box Plot of {selected_feature}')
+        st.pyplot(fig)
+
+    
+    
+
+
+    # Correlation Heatmap
+    st.subheader("Correlation Heatmap")
+    correlation_matrix = input_df.corr()
+    fig, ax = plt.subplots(figsize=(12, 8))
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5, ax=ax)
+    ax.set_title("Feature Correlation Heatmap")
+    st.pyplot(fig)
+
+
+    # Scatter Plot
+    st.subheader("Scatter Plot")
+    x_feature = st.selectbox('Select X-axis feature:', input_df.columns)
+    y_feature = st.selectbox('Select Y-axis feature:', input_df.columns)
+    if x_feature and y_feature:
+        fig = px.scatter(input_df, x=x_feature, y=y_feature, color='isFraud', title=f'Scatter Plot of {x_feature} vs {y_feature}')
+        st.plotly_chart(fig)
+
+    # Pie Chart
+    st.subheader("Pie Chart")
+    fig = px.pie(values=fraud_counts.values, names=fraud_counts.index, title='Transaction Type Proportions')
+    st.plotly_chart(fig)
+
+    # Feature Importance
+    if hasattr(load_clf, 'feature_importances_'):
+        st.subheader("Feature Importance")
+        feature_importance = pd.DataFrame({
+            'Feature': input_df.columns[:-1],
+            'Importance': load_clf.feature_importances_
+        }).sort_values(by='Importance', ascending=False)
+        fig = px.bar(feature_importance, x='Importance', y='Feature', orientation='h', title='Feature Importance')
+        st.plotly_chart(fig)
+else:
+    st.error("Prediction not available. Ensure the model is loaded and 'isFraud' column exists.")
+
+
+
+# # Log-transformation of the 'TransactionAmt'
+# input_df['Log_TransactionAmt'] = np.log1p(input_df['TransactionAmt'])
+
+# # Plotting the distribution of log-transformed Transaction Amount
+# plt.figure(figsize=(10, 6))
+# sns.histplot(input_df['Log_TransactionAmt'], bins=100, kde=True)
+
+# # Set plot title and labels
+# plt.title('Log-Transformed Transaction Amount Distribution')
+# plt.xlabel('Log(Transaction Amount)')
+# plt.ylabel('Frequency')
+
+# # Display the plot in Streamlit
+# st.pyplot(plt)
+
+# # Apply log transformation to 'TransactionAmt' for better visualization of its distribution
+# input_df['Log_TransactionAmt'] = np.log1p(input_df['TransactionAmt'])
+
+# # Create a boxplot for 'Log_TransactionAmt' vs. 'isFraud'
+# plt.figure(figsize=(10, 6))
+# sns.boxplot(x='isFraud', y='Log_TransactionAmt', data=input_df)
+
+# # Add title and labels
+# plt.title('Transaction Amount vs. Fraud')
+# plt.xlabel('Is Fraud')
+# plt.ylabel('Log(Transaction Amount)')
+
+# # Display the plot
+# st.pyplot(plt)
+
+
+
+
+
+
+# # Add labels and probabilities
 # input_df['Prediction'] = predictions
 # input_df['Prediction Label'] = input_df['Prediction'].apply(lambda x: 'Genuine Transaction' if x == 0 else 'Fraudulent Transaction')
 # input_df['Fraud Probability'] = prediction_probabilities[:, 1]
 
-# # Display results
-# st.subheader('Prediction Results')
-# st.write(input_df[['Prediction Label', 'Fraud Probability']])
+# # Separate genuine and fraudulent transactions
+# genuine_transactions = input_df[input_df['Prediction'] == 0]
+# fraudulent_transactions = input_df[input_df['Prediction'] == 1]
 
-# Add labels and probabilities
-input_df['Prediction'] = predictions
-input_df['Prediction Label'] = input_df['Prediction'].apply(lambda x: 'Genuine Transaction' if x == 0 else 'Fraudulent Transaction')
-input_df['Fraud Probability'] = prediction_probabilities[:, 1]
+# # Create columns for horizontal display
+# col1, col2 = st.columns(2)
 
-# Separate genuine and fraudulent transactions
-genuine_transactions = input_df[input_df['Prediction'] == 0]
-fraudulent_transactions = input_df[input_df['Prediction'] == 1]
+# # Display Genuine Transactions in the first column
+# with col1:
+#     st.subheader('Genuine Transactions')
+#     st.write(genuine_transactions[['Prediction Label', 'Fraud Probability']])
 
-# Create columns for horizontal display
-col1, col2 = st.columns(2)
+# # Display Fraudulent Transactions in the second column
+# with col2:
+#     st.subheader('Fraudulent Transactions')
+#     st.write(fraudulent_transactions[['Prediction Label', 'Fraud Probability']])
 
-# Display Genuine Transactions in the first column
-with col1:
-    st.subheader('Genuine Transactions')
-    st.write(genuine_transactions[['Prediction Label', 'Fraud Probability']])
-
-# Display Fraudulent Transactions in the second column
-with col2:
-    st.subheader('Fraudulent Transactions')
-    st.write(fraudulent_transactions[['Prediction Label', 'Fraud Probability']])
-
-# Visualization Section
+# # Visualization Section
 
 
-## Count the occurrences of 'Fraudulent' and 'Genuine' in the 'Prediction Label' column
-prediction_counts = input_df['Prediction Label'].value_counts()
+# ## Count the occurrences of 'Fraudulent' and 'Genuine' in the 'Prediction Label' column
+# prediction_counts = input_df['Prediction Label'].value_counts()
 
-# Prepare the data for the pie chart
-data = {'Category': prediction_counts.index, 'Count': prediction_counts.values}
-df = pd.DataFrame(data)
+# # Prepare the data for the pie chart
+# data = {'Category': prediction_counts.index, 'Count': prediction_counts.values}
+# df = pd.DataFrame(data)
 
-# Plotting the Pie Chart
-fig = px.pie(df, names='Category', values='Count', title="Fraud vs Genuine Transactions")
-fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1A7FA2', '#F0C808']))
-st.plotly_chart(fig, use_container_width=True)
+# # Plotting the Pie Chart
+# fig = px.pie(df, names='Category', values='Count', title="Fraud vs Genuine Transactions")
+# fig.update_traces(textinfo='percent+label', marker=dict(colors=['#1A7FA2', '#F0C808']))
+# st.plotly_chart(fig, use_container_width=True)
 
-# Bar chart for prediction counts
-st.write("### Fraudulent vs Genuine Transactions")
-prediction_counts = input_df['Prediction Label'].value_counts()
-fig, ax = plt.subplots()
-sns.barplot(x=prediction_counts.index, y=prediction_counts.values, ax=ax, palette="coolwarm")
-ax.set_title("Transaction Count")
-ax.set_ylabel("Count")
-ax.set_xlabel("Transaction Type")
-st.pyplot(fig)
+# # Bar chart for prediction counts
+# st.write("### Fraudulent vs Genuine Transactions")
+# prediction_counts = input_df['Prediction Label'].value_counts()
+# fig, ax = plt.subplots()
+# sns.barplot(x=prediction_counts.index, y=prediction_counts.values, ax=ax, palette="coolwarm")
+# ax.set_title("Transaction Count")
+# ax.set_ylabel("Count")
+# ax.set_xlabel("Transaction Type")
+# st.pyplot(fig)
 
 
 
-# Distribution of fraud probabilities
-st.write("### Fraud Probability Distribution")
-fig, ax = plt.subplots()
-sns.histplot(input_df['Fraud Probability'], bins=20, kde=True, color="orange", ax=ax)
-ax.set_title("Fraud Probability Distribution")
-ax.set_xlabel("Fraud Probability")
-ax.set_ylabel("Frequency")
-st.pyplot(fig)
+# # Distribution of fraud probabilities
+# st.write("### Fraud Probability Distribution")
+# fig, ax = plt.subplots()
+# sns.histplot(input_df['Fraud Probability'], bins=20, kde=True, color="orange", ax=ax)
+# ax.set_title("Fraud Probability Distribution")
+# ax.set_xlabel("Fraud Probability")
+# ax.set_ylabel("Frequency")
+# st.pyplot(fig)
 
-# Altair chart for Fraud Probability vs Amount
-st.write("### Fraud Probability vs Transaction Amount")
-chart = alt.Chart(input_df).mark_circle(size=60).encode(
-    x='Amount',
-    y='Fraud Probability',
-    color='Prediction Label',
-    tooltip=['Amount', 'Fraud Probability', 'Prediction Label']
-).interactive()
-st.altair_chart(chart, use_container_width=True)
+# # Altair chart for Fraud Probability vs Amount
+# st.write("### Fraud Probability vs Transaction Amount")
+# chart = alt.Chart(input_df).mark_circle(size=60).encode(
+#     x='Amount',
+#     y='Fraud Probability',
+#     color='Prediction Label',
+#     tooltip=['Amount', 'Fraud Probability', 'Prediction Label']
+# ).interactive()
+# st.altair_chart(chart, use_container_width=True)
