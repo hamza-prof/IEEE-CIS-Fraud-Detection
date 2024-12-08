@@ -350,13 +350,23 @@ if 'isFraud' in input_df.columns:
     
     
 
+    # Example Streamlit app for displaying correlation heatmap
+    st.subheader("Top Correlated Features Heatmap")
 
-    # Correlation Heatmap
-    st.subheader("Correlation Heatmap")
+    # Assuming `input_df` is the DataFrame containing your data and includes 'isFraud'
+
+    # Calculate correlation matrix
     correlation_matrix = input_df.corr()
-    fig, ax = plt.subplots(figsize=(12, 8))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5, ax=ax)
-    ax.set_title("Feature Correlation Heatmap")
+
+    # Select top 15 features most correlated with 'isFraud'
+    top_corr = correlation_matrix['isFraud'].abs().sort_values(ascending=False).head(15).index
+
+    # Plot heatmap of selected features
+    fig, ax = plt.subplots(figsize=(12, 10))
+    sns.heatmap(input_df[top_corr].corr(), annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5, ax=ax)
+    ax.set_title("Correlation Matrix of Top Features with isFraud")
+
+    # Display heatmap
     st.pyplot(fig)
 
 
