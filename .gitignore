@@ -50,7 +50,6 @@ pip-delete-this-directory.txt
 *.pyd
 __pycache__/
 *.joblib
-*.pkl
 
 
 # Streamlit-specific
