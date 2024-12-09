@@ -52,8 +52,8 @@ __pycache__/
 *.joblib
 
 
-# Streamlit-specific
-.streamlit/
+# # Streamlit-specific
+# .streamlit/
 
 # Others
 .idea/
